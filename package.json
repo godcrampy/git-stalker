@@ -1,0 +1,47 @@
+{
+  "name": "git-stalker",
+  "version": "1.0.0",
+  "description": "Stalk github users without leaving the terminal",
+  "main": "index.js",
+  "author": {
+    "name": "Sahil Bondre",
+    "email": "sahilbondre@gmail.com",
+    "url": "https://sahil.surge.sh"
+  },
+  "scripts": {
+    "watch": "tsc -w",
+    "build": "tsc",
+    "start": "yarn build && node dist/app.js",
+    "lint": "eslint '**/*.ts' --fix && prettier --write '**/*.ts'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn lint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godcrampy/git-stalker.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/godcrampy/git-stalker/issues"
+  },
+  "homepage": "https://github.com/godcrampy/git-stalker#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "typescript": "^3.8.3"
+  }
+}
