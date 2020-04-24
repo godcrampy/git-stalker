@@ -36,6 +36,15 @@
     "url": "https://github.com/godcrampy/git-stalker/issues"
   },
   "homepage": "https://github.com/godcrampy/git-stalker#readme",
+  "keywords": [
+    "cli-app",
+    "cli",
+    "github",
+    "down",
+    "check",
+    "up",
+    "status"
+  ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
