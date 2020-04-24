@@ -2,7 +2,10 @@
   "name": "git-stalker",
   "version": "1.0.0",
   "description": "Stalk github users without leaving the terminal",
-  "main": "index.js",
+  "main": "./dist/cli.js",
+  "bin": {
+    "stalk": "./dist/cli.js"
+  },
   "author": {
     "name": "Sahil Bondre",
     "email": "sahilbondre@gmail.com",
@@ -11,7 +14,7 @@
   "scripts": {
     "watch": "tsc -w",
     "build": "tsc",
-    "start": "yarn build && node dist/app.js",
+    "start": "yarn build && node dist/cli.js",
     "lint": "eslint '**/*.ts' --fix && prettier --write '**/*.ts'"
   },
   "husky": {
