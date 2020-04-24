@@ -1,0 +1,3 @@
+# https://github.com/github/linguist/issues/2403
+# Javascript files are generated ones
+*.js linguist-language=TypeScript
