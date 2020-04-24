@@ -55,13 +55,13 @@ var node_emoji_1 = __importDefault(require("node-emoji"));
                 clear_1.default();
                 console.log(chalk_1.default.rgb(255, 22, 84)(figlet_1.default.textSync("Stalk", {
                     font: "ANSI Shadow",
-                })));
+                }) + chalk_1.default.bold(" v1.0.0")));
                 if (process_1.default.argv.length !== 3) {
                     console.log(chalk_1.default.bold("Usage:"));
                     console.log(chalk_1.default.whiteBright("  stalk [username]"));
                     return [2 /*return*/];
                 }
-                if (["--help", "-h"].includes(process_1.default.argv[2])) {
+                if (["--help", "-h", "--version", "-v"].includes(process_1.default.argv[2])) {
                     console.log(chalk_1.default.bold("Usage:"));
                     console.log(chalk_1.default.whiteBright("  stalk [username]"));
                     return [2 /*return*/];
@@ -88,7 +88,7 @@ var node_emoji_1 = __importDefault(require("node-emoji"));
                 printPair("Location", user.location);
                 printPair("Works At", user.company);
                 printPair("Blog", user.blog);
-                printPair("Joined", user.created_at);
+                printPair("Joined", beautifyDate(user.created_at));
                 printPair("Looking for a job?", user.hireable ? "Yes" : "No");
                 printPair("Repos", user.public_repos.toString());
                 printPair("Followers", user.followers.toString());
@@ -101,4 +101,11 @@ function printPair(left, right) {
     if (right !== null) {
         console.log(chalk_1.default.bold.green(left) + ": " + right);
     }
+}
+function beautifyDate(s) {
+    return new Date(s).toLocaleDateString([], {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+    });
 }

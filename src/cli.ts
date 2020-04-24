@@ -34,7 +34,7 @@ type User = {
     )(
       figlet.textSync("Stalk", {
         font: "ANSI Shadow",
-      })
+      }) + chalk.bold(" v1.0.0")
     )
   );
   if (process.argv.length !== 3) {
@@ -43,7 +43,7 @@ type User = {
     return;
   }
 
-  if (["--help", "-h"].includes(process.argv[2])) {
+  if (["--help", "-h", "--version", "-v"].includes(process.argv[2])) {
     console.log(chalk.bold("Usage:"));
     console.log(chalk.whiteBright("  stalk [username]"));
     return;
@@ -79,7 +79,7 @@ type User = {
   printPair("Location", user.location);
   printPair("Works At", user.company);
   printPair("Blog", user.blog);
-  printPair("Joined", user.created_at);
+  printPair("Joined", beautifyDate(user.created_at));
   printPair("Looking for a job?", user.hireable ? "Yes" : "No");
   printPair("Repos", user.public_repos.toString());
   printPair("Followers", user.followers.toString());
@@ -90,4 +90,12 @@ function printPair(left: string, right: string) {
   if (right !== null) {
     console.log(`${chalk.bold.green(left)}: ${right}`);
   }
+}
+
+function beautifyDate(s: string): string {
+  return new Date(s).toLocaleDateString([], {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 }
