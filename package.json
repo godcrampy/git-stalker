@@ -1,7 +1,7 @@
 {
   "name": "git-stalker",
   "version": "1.0.0",
-  "description": "Stalk github users without leaving the terminal",
+  "description": "Stalk GitHub users without leaving your terminal",
   "main": "./dist/cli.js",
   "bin": {
     "stalk": "./dist/cli.js"
