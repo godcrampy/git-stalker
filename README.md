@@ -1,5 +1,9 @@
 # Git Stalker
 
+![npm](https://img.shields.io/npm/v/git-stalker)
+![NPM](https://img.shields.io/npm/l/git-stalker)
+![GitHub stars](https://img.shields.io/github/stars/godcrampy/git-stalker?style=social)
+
 Stalk GitHub users without leaving your terminal.
 
 ![demo](docs/git-stalk.gif)
